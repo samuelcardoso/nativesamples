@@ -1,0 +1,7 @@
+# Java
+.metadata/
+java/target
+
+# Node
+dotnet/node/build
+/.metadata/

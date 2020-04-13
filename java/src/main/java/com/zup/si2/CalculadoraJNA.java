@@ -1,5 +1,7 @@
+package com.zup.si2;
+
 import com.sun.jna.Library;
- 
+
 public interface CalculadoraJNA extends Library {
-  public int soma(int num1, int num2);
+	public int soma(int num1, int num2);
 }

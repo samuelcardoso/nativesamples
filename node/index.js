@@ -1,2 +1,2 @@
-const app = require('../dotnet/build/Release/program')
+const app = require('../dotnet/node/build/Release/program')
 console.log(app.hello());
