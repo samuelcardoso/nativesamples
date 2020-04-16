@@ -58,6 +58,11 @@ functions:
     # you can add packaging information here
     package:
       artifact: bin/release/netcoreapp2.1/hello.zip
+    events:
+      - http:
+          path: hello
+          method: get
+          cors: true
     #  exclude:
     #    - exclude-me.js
     #    - exclude-me-dir/**
