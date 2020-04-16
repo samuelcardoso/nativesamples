@@ -7,7 +7,7 @@ provider:
   runtime: java8
   
 package:
-  artifact: target/aws-java-simple-http-endpoint.jar
+  artifact: target/aws-java-native.jar
 
 functions:
   currentTime:

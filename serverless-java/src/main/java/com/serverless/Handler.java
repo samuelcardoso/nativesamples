@@ -22,6 +22,11 @@ public class Handler implements RequestHandler<Map<String, Object>, ApiGatewayRe
 		Map<String, String> headers = new HashMap<>();
 		headers.put("X-Powered-By", "AWS Lambda & Serverless");
 		headers.put("Content-Type", "application/json");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return ApiGatewayResponse.builder()
 				.setStatusCode(200)
 				.setObjectBody(responseBody)
