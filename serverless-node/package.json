@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "npm run clean && tsc",
-    "start": "./node_modules/.bin/serverless offline",
+    "start": "./node_modules/.bin/serverless offline start --stage local",
     "debug": "npm run-script build && NODE_ENV=dev DEBUG=* node --inspect ./node_modules/.bin/serverless offline --noTimeout",
     "clean": "rimraf .build",
     "lint": "eslint ./app/**/*.ts ./test/**/*.ts",

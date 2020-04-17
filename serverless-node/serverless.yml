@@ -8,13 +8,19 @@ provider:
   name: aws
   region: us-east-1
   runtime: nodejs10.x
-  stage: prod
+  stage: local
 
 functions:
   api:
-    handler: src/main.run
+    handler: src/handler.api
     events:
       - http:
-          path: /docs
+          path: docs
           method: get
-          private: false
+          cors: true
+          timeout: 30
+      - http:
+          path: test
+          method: get
+          cors: true
+          timeout: 30
