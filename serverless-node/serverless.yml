@@ -1,0 +1,15 @@
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+service: boilerplatelambda
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs10.x
+  stage: samuel
+
+functions:
+  run:
+    handler: src/lambda/main.run
