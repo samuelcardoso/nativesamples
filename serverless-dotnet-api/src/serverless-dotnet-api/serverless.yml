@@ -1,0 +1,19 @@
+service: serverless-dotnet-nfl-api
+
+provider:
+  name: aws
+  runtime: dotnetcore3.1
+  stage: prod
+  region: sa-east-1
+package:
+  individually: true
+
+functions:
+  api:
+    handler: serverless-dotnet-api::serverless_dotnet_api.LambdaEntryPoint::FunctionHandlerAsync
+    package:
+      artifact: bin/release/netcoreapp3.1/nfl.zip
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY 
