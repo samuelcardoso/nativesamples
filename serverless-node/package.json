@@ -21,7 +21,9 @@
     "test": "cross-env mocha",
     "tsc": "tsc"
   },
-  "dependencies": {},
+  "dependencies": {
+    "aws-lambda": "^1.0.5"
+  },
   "devDependencies": {
     "@types/node": "^11.10.4",
     "@typescript-eslint/eslint-plugin": "^1.13.0",

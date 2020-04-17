@@ -2,14 +2,19 @@ plugins:
   - serverless-plugin-typescript
   - serverless-offline
 
-service: boilerplatelambda
+service: nativesamples
 
 provider:
   name: aws
   region: us-east-1
   runtime: nodejs10.x
-  stage: samuel
+  stage: prod
 
 functions:
-  run:
-    handler: src/lambda/main.run
+  api:
+    handler: src/main.run
+    events:
+      - http:
+          path: /docs
+          method: get
+          private: false
