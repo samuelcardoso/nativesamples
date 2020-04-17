@@ -22,11 +22,11 @@ service: serverless-dotnet
 
 provider:
   name: aws
-  runtime: dotnetcore2.1
+  runtime: dotnetcore3.1
 
 # you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+# stage: prod
+  region: sa-east-1
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -57,12 +57,13 @@ functions:
 
     # you can add packaging information here
     package:
-      artifact: bin/release/netcoreapp2.1/hello.zip
+      artifact: bin/release/netcoreapp3.1/hello.zip
     events:
       - http:
           path: hello
           method: get
           cors: true
+          integration: LAMBDA 
     #  exclude:
     #    - exclude-me.js
     #    - exclude-me-dir/**
