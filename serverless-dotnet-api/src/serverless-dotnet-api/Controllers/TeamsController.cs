@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System.Threading.Tasks;
+using System.IO;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading;
 
 namespace serverless_dotnet_api.Controllers
 {
@@ -7,9 +10,12 @@ namespace serverless_dotnet_api.Controllers
     public class TeamsController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<string> Get()
+        public  IActionResult Get()
         {
-            return new string[] { "Patriots", "Cowboys", "Jets" };
+            Thread.Sleep(200);
+
+            return Ok(new string[] { "Patriots", "Cowboys", "Jets" });
+
         }
 
         [HttpGet("{team}")]
