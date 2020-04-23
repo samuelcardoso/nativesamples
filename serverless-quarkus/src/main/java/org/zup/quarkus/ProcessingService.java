@@ -13,7 +13,7 @@ public class ProcessingService {
         if (input.getName().equals("Stuart")) {
             throw new IllegalArgumentException(CAN_ONLY_GREET_NICKNAMES);
         }
-        CalculadoraJNA calculadora = (CalculadoraJNA) Native.load("/home/samuel/desenv/workspaces/zup/si2/quarkus/quarkuslambda/src/main/resources/libsomadorJNA.so", CalculadoraJNA.class);
+        CalculadoraJNA calculadora = (CalculadoraJNA) Native.load("libsomadorJNA.so", CalculadoraJNA.class);
         String result = "Saida: " + calculadora.soma(1, 2);
         OutputObject out = new OutputObject();
         out.setResult(result);
