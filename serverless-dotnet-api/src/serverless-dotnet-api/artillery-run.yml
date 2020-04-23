@@ -1,0 +1,12 @@
+config:
+    target: 'https://localhost:5001/api'
+    phases:
+      - duration: 10
+        arrivalRate: 1000
+scenarios:
+    - flow:
+        - get:
+            url: "/teams"
+
+
+  
